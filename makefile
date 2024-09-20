@@ -17,7 +17,7 @@ el_gamal.o: el_gamal.cpp
 header: crypto.h 
 	g++ crypto.h
 
-clear:
+clean:
 	rm *.o final
 
 run: ./final
