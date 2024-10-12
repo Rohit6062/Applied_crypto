@@ -1,12 +1,11 @@
 #include"crypto.h"
-ZZ cryptoAlgo::dlp(ZZ p,ZZ_p g,ZZ_p h){
-    ZZ_p::init(p);
+ZZ cryptoAlgo::dlp(ZZ_p k){
     ZZ_p pow;
-    ZZ x;
-    x= 0;  
-    for(x; x < p ; x++){
-        pow = power(g,x);
-        if(pow == h)return x;
+    ZZ i;
+    i= 0;  
+    for(i; i < this->prime ; i++){
+        pow = power(this->generator,i);
+        if(pow == k)return i;
     }
     return ZZ(-1);
 }
