@@ -1,6 +1,6 @@
 all: run
-final: vish.o dlp.o diff_hell.o el_gamal.o elliptic_curv_opr.o # header
-	g++ vish.o dlp.o diff_hell.o el_gamal.o elliptic_curv_opr.o -lntl -lgmp -pthread -o final
+final: vish.o dlp.o diff_hell.o el_gamal.o elliptic_curv_opr.o base.o# header
+	g++ vish.o dlp.o diff_hell.o el_gamal.o elliptic_curv_opr.o base_ntl.o -lntl -lgmp -pthread -o final
 
 vish.o: vish.cpp
 	g++ -c vish.cpp -o vish.o
@@ -19,6 +19,9 @@ header: crypto.h
 
 elliptic_curv_opr.o: elliptic_curv_opr.cpp 
 	g++ -c elliptic_curv_opr.cpp  
+
+base.o: base_ntl.cpp 
+	g++ -c base_ntl.cpp
 
 clean:
 	rm *.o final
