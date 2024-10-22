@@ -53,7 +53,7 @@ private:
         ZZ_p::init(Optimus_prime);
         this->a = a;
         this->b = b;
-        this->private_key = RandomBnd(this->prime);
+        this->private_key = ZZ(9);//RandomBnd(this->prime);
         cout<<this->a<<this->b<<endl;
     }
     elp_pnt* points_on_curv(ui);
